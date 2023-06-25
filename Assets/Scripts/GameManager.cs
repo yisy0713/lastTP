@@ -27,6 +27,8 @@ public class GameManager : MonoBehaviour
     public RectTransform DreamGaugeGroup;
     public RectTransform DreamGaugeBar;
 
+    public GameObject menuSet;
+
     public void Action(GameObject scanObj)
     {
         scanObject = scanObj;
@@ -84,5 +86,16 @@ public class GameManager : MonoBehaviour
         Equip4.color = new Color(1, 1, 1, player.hasEquip[3] ? 1 : 0);
 
         DreamGaugeBar.localScale = new Vector3(1/5, 1, 1);
+    }
+
+    void Update()
+    {
+        if (Input.GetButtonDown("Cancel"))
+        {
+            if(menuSet.activeSelf)
+                menuSet.SetActive(false);
+            else
+                menuSet.SetActive(true);
+        }
     }
 }
