@@ -27,7 +27,7 @@ public class TalkManager : MonoBehaviour
         talkData.Add(7000, new string[] { "고장난 시계이다.:0" });
 
 
-        talkData.Add(10 + 1000, new string[] { "안녕히 주무셨나요 아가씨?:0", "이제 서제에서 공부하실 시간입니다.:0" });
+        talkData.Add(10 + 1000, new string[] { "안녕히 주무셨나요 아가씨?:0", "이제 서재에서 공부하실 시간입니다.:0" });
         talkData.Add(10 + 3000, new string[] { ".....:0", "내 얼굴이 보인다.:0" });
         talkData.Add(11 + 2000, new string[] { "낡고 오래된 책이 떨어져있다.:0", "꿈 속에서 탈출하는 방법:0", "1. 달팽이풀을 달여 마신다:0", "2. 시간을 되돌린다:0", "3. 숙면을 취한다.:0", "음..일단 달팽이풀에 대해 알아봐야겠네..:1" });
 

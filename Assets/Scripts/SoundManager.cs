@@ -5,12 +5,10 @@ using UnityEngine.UI;
 
 public class SoundManager : MonoBehaviour
 {
-    [SerializeField] Slider volumeSlider;
-
-    public AudioSource Musicsource;
+    public AudioSource musicsource;
     
-   // public void SetMusicVolume(float volume)
-    //{
-      //  musicsource.volume; 
-    //}
+    public void SetMusicVolume(float volume)
+    {
+        musicsource.volume = volume; 
+    }
 }
