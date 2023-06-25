@@ -10,6 +10,9 @@ TagManager:
   - key
   - book
   - candle
+  - Mono_Scene
+  - HappyEnding
+  - Boss
   layers:
   - Default
   - TransparentFX

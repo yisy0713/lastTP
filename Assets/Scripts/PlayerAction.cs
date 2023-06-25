@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerAction : MonoBehaviour
 {
@@ -211,6 +212,11 @@ public class PlayerAction : MonoBehaviour
                 Debug.Log("초를 얻었다!");
                 Destroy(nearObject);
             }
+            else if (nearObject.tag == "Mono_Scene")
+            {
+                SceneManager.LoadScene("InGame_Final");
+                Debug.Log("인게임 파이널 씬 이동");
+            }
 
 
         }
@@ -263,6 +269,7 @@ public class PlayerAction : MonoBehaviour
         }
 
     }*/
+
     void OnTriggerStay2D(Collider2D collision) /////충돌 체크 문제 해결
     {
 
@@ -290,12 +297,54 @@ public class PlayerAction : MonoBehaviour
             Debug.Log("candle");
             Debug.Log(nearObject.tag);
         }
+        if (collision.CompareTag("Mono_Scene"))
+        {
+            nearObject = collision.gameObject;
+            Debug.Log("Mono_Scene");
+            Debug.Log(nearObject.tag);
+        }
+        if (collision.CompareTag("HappyEnding"))
+        {
+            SceneManager.LoadScene("HappyEnding");
+            Debug.Log("해 피 엔딩 씬 이동");
+            //nearObject = collision.gameObject;
+            //Debug.Log("HappyEnding");
+            //Debug.Log(nearObject.tag);
+        }
+        if (collision.CompareTag("Boss"))
+        {
+            SceneManager.LoadScene("BadEnding");
+            Debug.Log("Bad 엔딩 씬 이동");
+            //nearObject = collision.gameObject;
+            //Debug.Log("HappyEnding");
+            //Debug.Log(nearObject.tag);
+        }
+
 
     }
     void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "Equipment")
+       
+        if (collision.CompareTag("SnailGrass"))
+        {
             nearObject = null;
+        }
+        if (collision.CompareTag("key"))
+        {
+            nearObject = null;
+        }
+        if (collision.CompareTag("book"))
+        {
+            nearObject = null;
+        }
+        if (collision.CompareTag("candle"))
+        {
+            nearObject = null;
+        }
+        if (collision.CompareTag("Mono_Scene"))
+        {
+            nearObject = null;
+        }
     }
 
 }

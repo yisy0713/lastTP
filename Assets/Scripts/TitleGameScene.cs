@@ -13,7 +13,6 @@ public class TitleGameScene : MonoBehaviour
 
     public void GameOverScenesCtrl()
     {
-        SceneManager.LoadScene("GameOver");
-        Debug.Log("게임 종료 씬 이동");
+        Application.Quit();
     }
 }
